@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block title %} Completed Goals {% endblock %}
+
+{% block body %}
+    <form action="/completed_goals" method="post">
+        <div class="container grid-layout margins">
+            {% for goal in c_goals %}
+                <button name="goal" value="{{ goal }}" class="goal complete text-center">
+                    <div class="center-text">
+                        {{ goal[3]|truncate(12, true) }}
+                    </div>
+                </button>
+            {% endfor %}
+        </div>
+    </form>
+{% endblock %}

@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block title %} Goal {% endblock %}
+
+{% block body %}
+  <script>
+    function check() {
+      var c = confirm("Mark as complete?");
+      let form = document.getElementById('form');
+
+      if (c == false) {
+        form.addEventListener('submit', event => {
+          event.preventDefault();
+        });
+      }
+    }
+  </script>
+  <form action="/goal" method="post" id="form">
+    <div class="small-container">
+      <p class="goal-name goals">{{ goal[3] }}</p>
+      <hr>
+      <p class="goals">{{ goal[4] }}</p>
+      <hr>
+      <div class="date">Date created: <b>{{ goal[6] }}</b></div>
+      <div class="date">Complete by: <b>{{ goal[5] }}</b></div>
+      <div class="date">Current date: <b>{{ today }}</b></div>
+      {% if time >= 0 %}
+        <div class="date">Days remaining: <b>{{ time }} day(s)</b></div>
+      {% else %}
+        <div class="date"><b class="red">You missed the deadline!</b></div>
+      {% endif %}
+      <button class="btn btn-success completed" 
+              value="{{ goal }}" 
+              name="status" 
+              type="submit"
+              onclick="check()">
+      Mark Complete</button>
+      <div class="mtop">Type of goal: <b>{{ goal[2] }}</b></div>
+    </div>
+  </form>
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block title %} Home {% endblock %}
+
+{% block body %}
+    <form action="/" method="post">
+        <div class="container grid-layout margins">
+            {% for missing in incomplete %}
+                <button name="goal" value="{{ missing }}" class="goal missing text-center">
+                    <div class="center-text">
+                        {{ missing[3]|truncate(12, true) }}
+                    </div>
+                </button>
+            {% endfor %}
+            {% for goal in goals %}
+                <button name="goal" value="{{ goal }}" class="goal incomplete text-center">
+                    <div class="center-text">
+                        {{ goal[3]|truncate(12, true) }}
+                    </div>
+                </button>
+            {% endfor %}
+        </div>
+    </form>
+{% endblock %}

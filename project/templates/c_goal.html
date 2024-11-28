@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+
+{% block title %} Completed Goal {% endblock %}
+
+{% block body %}
+    <script>
+        function check() {
+            var c = confirm("Mark as complete?");
+            let form = document.getElementById('form');
+
+            if (c == false) {
+            form.addEventListener('submit', event => {
+                event.preventDefault();
+            });
+            }
+        }
+    </script>
+    <form action="/goal" method="post" id="form">
+        <div class="small-container">
+            <p class="goal-name goals">{{ c_goal[3] }}</p>
+            <hr>
+            <p class="goals">{{ c_goal[4] }}</p>
+            <hr>
+            <div class="date">Date created: <b>{{ c_goal[6] }}</b></div>
+            <div class="date">Completed: <b>{{ c_goal[8] }}</b></div>
+            {% if days > 0 %}
+                <div class="date"><b>{{ days }} day(s)</b> <b class="green">ahead</b> the deadline</div>
+            {% elif days == 0 %}
+                <div class="date">Done <b class="green">right on</b> the deadline</div>
+            {% else %}
+                <div class="date"><b>{{ after_days }} day(s)</b> <b class="red">behind</b> the deadline</div>
+            {% endif %}
+            <button class="btn btn-danger completed" 
+                    value="{{ c_goal }}" 
+                    name="status" 
+                    type="submit"
+                    onclick="check()">
+            Mark Incomplete</button>
+            <div class="mtop">Type of goal: <b>{{ c_goal[2] }}</b></div>
+        </div>
+    </form>
+{% endblock %}

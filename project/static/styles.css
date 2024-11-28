@@ -1,0 +1,138 @@
+* {
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+
+.center-button {
+    margin-top: 15px;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.center-text {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+.complete {
+    color: white;
+    background-color: #028A0F;
+    border: 2px solid yellow;
+}
+.complete:hover {
+    background-color: #03AC13;
+    border: 3px solid #FFD700
+}
+.date {
+    float: right;
+    font-family:Georgia, 'Times New Roman', Times, serif
+}
+.folders div {
+    padding: 3em;
+}
+.goal {
+    height: 15vh;
+    width: 12vw;
+    border-radius: 10px;
+    margin: 3vh auto 3vh auto;
+    position: relative;
+}
+.goal-name {
+    font-weight: bold;
+    font-size: 1.15em;
+    text-align: center;
+}
+.goals {
+    font-family:'Times New Roman', Times, serif;
+    word-break: break-word;
+}
+.green {
+    color: green;
+}
+.grid-layout {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    border: 2px solid black;
+    border-radius: 1vw;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+}
+.incomplete {
+    color: black;
+    background-color: #F9E076;
+    border: 2px solid #BC544B;
+}
+.incomplete:hover {
+    background-color: #EEED09;
+    border: 3px solid #B90E0A;
+}
+.margins {
+    margin-top: 10vh;
+    margin-bottom: 10vh;
+}
+.mbottom {
+    margin-bottom: 5vh;
+}
+.missing {
+    color: black;
+    background-color: #BC544B;
+    border: 2px solid #FDEFB2;
+}
+.missing:hover {
+    background-color: #990F02;
+    border: 3px solid yellow;
+}
+.mleft {
+    margin-left: 2vw;
+}
+.mleftauto {
+    margin-left: auto;
+}
+.mright {
+    margin-right: 2vw;
+}
+.mtop {
+    margin-top: 1.5vh;
+}
+.red {
+    color: red;
+}
+.small-container {
+    margin: auto;
+    padding-top: 10vh;
+    width: 333px;
+    position: relative;
+}
+.small-container input {
+    margin-bottom: 12.5px;
+}
+.small-margins {
+    margin-bottom: 1vh;
+}
+.special-small-container {
+    margin: auto;
+    width: 333px;
+    position: relative;
+}
+
+@media only screen and (max-width: 1280px) {
+    .grid-layout {
+        grid-template-columns: auto auto auto;
+    }
+    .goal {
+        height: 15vh;
+        width: 17.5vw;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .grid-layout {
+        grid-template-columns: auto auto;
+    }
+    .goal {
+        height: 12.5vh;
+        width: 30vw;
+    }
+}
